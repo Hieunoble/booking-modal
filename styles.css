@@ -1,0 +1,207 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.btn {
+  padding: 14px 22px;
+  background: #00844C;
+  color: white;
+  border: 2px solid #00844C;
+  font-weight: 600;
+  outline: none;
+  line-height: 1;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: .9;
+}
+
+.modal.isOpen {
+  display: flex;
+  animation: openBooking ease-in-out .5s;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  background: rgba(135, 135, 135, 0.3);
+  display: none
+}
+
+.modal-container {
+  position: relative;
+  background: white;
+  width: 800px;
+  height: 760px;
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  right: 0;
+  top: 0;
+  padding: 16px;
+  color: #000000
+}
+
+.modal-close:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.modal-header {
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h3 {
+  /* display: inline-block; */
+  padding: 16px;
+}
+
+.modal-body {
+  /* height: 100%; */
+  padding: 15px
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.modal-select {
+  padding-bottom: 16px;
+}
+
+.modal-select label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.select {
+  width: 100%;
+  border: 1px solid #ced4da;
+  padding: 7.5px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  opacity: .8;
+}
+
+.modal-form {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.modal-form-field {
+  flex: 0 0 50%;
+  margin: 0 -15px;
+  padding: 0 15px;
+}
+
+.modal-form-control {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.modal-comment {
+  position: absolute;
+  padding: 0 15px;
+}
+
+.modal-form-detail {
+  outline: none;
+  border: 1px solid #ced4da;
+  padding: 7.5px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  color: #495057;
+  line-height: 1.5;
+}
+
+.modal-comment {
+  width: 100%;
+}
+
+.modal-comment textarea {
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  resize: vertical;
+  font-family: inherit;
+  margin: 0;
+}
+
+.modal-footer {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+
+}
+
+.submitBtn {
+  padding: 14px 22px;
+  background: #00844C;
+  color: white;
+  border: 2px solid #00844C;
+  font-weight: 600;
+  outline: none;
+  line-height: 1;
+}
+
+.submitBtn:hover {
+  cursor: pointer;
+  animation: changeBtn .9s ease-in;
+}
+
+@keyframes changeBtn {
+  from {
+    background: #00844C;
+    color: white;
+  }
+
+  to {
+    background: #fff;
+    color: #00844C;
+  }
+}
+
+@keyframes openBooking {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
