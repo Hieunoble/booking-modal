@@ -21,8 +21,7 @@ modal.addEventListener('click', closeBooking)
 modal.addEventListener('blur', closeBooking)
 container.addEventListener('click', defaultPropagation)
 
-//calendar handlers
-
+//Rendering Calendar
 const currentDate = document.querySelector('.current-date')
 const daysTag = document.querySelector('.days')
 const prevNextIcon = document.querySelectorAll('.arrow_calendar i')
@@ -65,9 +64,24 @@ renderCalendar()
 prevNextIcon.forEach(icon => {
   icon.addEventListener("click", () => {
     icon.id === "prev" ? currMonth -= 1 : currMonth += 1
+    console.log(currMonth);
+
+    if (currMonth < 0 || currMonth > 11) {
+      date = new Date(currYear, currMonth)
+      currYear = date.getFullYear()
+      currMonth = date.getMonth()
+    } else {
+      date = new Date()
+    }
     renderCalendar()
   })
 })
+
+// Calendar handler
+
+const calendarSelector = document.querySelector('input.date')
+
+
 
 
 

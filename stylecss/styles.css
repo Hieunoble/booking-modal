@@ -24,10 +24,10 @@ body {
   opacity: .9;
 }
 
-/* .modal.isOpen {
+.modal.isOpen {
   display: flex;
   animation: openBooking ease-in-out .5s;
-} */
+}
 
 .modal {
   display: none;
@@ -130,6 +130,7 @@ input::-webkit-inner-spin-button {
 }
 
 .modal-form-control {
+  position: relative;
   margin-bottom: 16px;
 }
 

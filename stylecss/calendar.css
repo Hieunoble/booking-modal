@@ -1,38 +1,55 @@
 .calendar {
+  /* display: none; */
   position: absolute;
   /* display: flex; */
-  top: 100px;
-  left: 100px;
-  right: 100px;
-  height: 600px;
+  top: 63px;
+  left: 0px;
+  height: 200px;
+  max-height: 250px;
+  width: 300px;
+  z-index: 999;
   border: 1px solid black;
+  box-sizing: border-box;
   border-radius: 10px;
-  background: rgb(175, 155, 194);
+  background: rgb(255, 255, 255);
   text-align: center;
+  font-size: .75rem;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 25px 30px 10px;
+  padding: 10px 10px 10px;
+}
+
+.header h1,
+.header h2 {
+  font-size: .75rem;
 }
 
 .header i {
-  font-size: 20px;
-  height: 30px;
-  width: 30px;
+  /* height: 30px;*/
+  font-size: .75rem;
+  line-height: 18px;
+  width: 20px;
   background-color: #b9b9b9;
   opacity: .6;
   border-radius: 8px;
   margin: 0 auto;
+  margin-right: 15px;
   text-align: center;
-  line-height: 30px;
   cursor: pointer;
 }
 
 .calendar-detail {
-  padding: 20px;
+  position: absolute;
+  top: 40px;
+  bottom: 10px;
+  background: #6f6f6f;
+  padding: 5px;
+  margin: 0 10px;
+  border-radius: 8px;
 }
 
 .calendar-detail ul {
@@ -43,25 +60,27 @@
 }
 
 .calendar-detail .weeks li {
-  font-weight: 700;
+  font-weight: 500;
+  margin-top: 5px;
 }
 
 .calendar-detail .days {
-  margin-bottom: 20px;
-}
-
-.calendar-detail .days .inactive {
-  opacity: .6;
-}
-
-.calendar-detail .days .active {
-  color: #fff;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .calendar-detail .days li {
   z-index: 1;
   cursor: pointer;
-  margin-top: 30px;
+  margin: 3px 0;
+}
+
+.days li.inactive {
+  opacity: .6;
+}
+
+.days li.active {
+  color: #fff;
 }
 
 .calendar-detail ul li {
@@ -69,12 +88,12 @@
   width: calc(100% / 7);
 }
 
-.calendar-detail .days ul li::before {
+.calendar-detail .days li::before {
   position: absolute;
   content: " ";
-  height: 40px;
-  width: 40px;
-  top: -50%;
+  height: 20px;
+  width: 20px;
+  top: -20%;
   left: 50%;
   z-index: -1;
   transform: translate(-50%);
@@ -87,5 +106,5 @@
 }
 
 .days li.active::before {
-  background: #8adfab;
+  background-color: #00844C;
 }

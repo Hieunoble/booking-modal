@@ -83,16 +83,48 @@
           </div>
 
           <div class="modal-form-field">
-            <div class="modal-detail modal-form-control">
+            <div class="modal-detail modal-form-control date">
               <label for="">Tour starting date</label>
-              <input class="modal-form-detail" type="number" placeholder="Fill in number">
+              <input class="modal-form-detail" type="number" placeholder="Date">
+            
+              <div class="calendar">
+                <div class="header">
+                  <h1>Calendar</h1>
+                  <h2 class="current-date"></h2>
+                  <div class="arrow_calendar">
+                    <i id="prev" class="fa-solid fa-angle-left"></i>
+                    <i id="next" class="fa-solid fa-angle-right"></i>
+                  </div>
+                </div>
+
+                <div class="calendar-detail">
+                  <div class="weeks">
+                    <ul>
+                      <li>Sun</li>
+                      <li>Mon</li>
+                      <li>Tue</li>
+                      <li>Wed</li>
+                      <li>Thur</li>
+                      <li>Fri</li>
+                      <li>Sat</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <ul class="days">
+                    </ul>
+                  </div>
+                </div>
+
+
+              </div>
             </div>
           </div>
 
           <div class="modal-form-field">
             <div class="modal-detail modal-form-control">
               <label for="">Time</label>
-              <input class="modal-form-detail" type="number" placeholder="Fill in number">
+              <input class="modal-form-detail date" type="number" placeholder="Fill in number">
             </div>
           </div>
 
@@ -100,6 +132,7 @@
             <div class="modal-detail modal-form-control">
               <label for="">Meeting place</label>
               <input class="modal-form-detail" type="text" placeholder="Meeting place">
+
             </div>
           </div>
 
@@ -126,37 +159,7 @@
     </div>
   </div>
 
-  <div class="calendar">
-    <div class="header">
-      <h1>Calendar</h1>
-      <h2 class="current-date"></h2>
-      <div class="arrow_calendar">
-        <i id="prev" class="fa-solid fa-angle-left"></i>
-        <i id="next" class="fa-solid fa-angle-right"></i>
-      </div>
-    </div>
 
-    <div class="calendar-detail">
-      <div class="weeks">
-        <ul>
-          <li>Sun</li>
-          <li>Mon</li>
-          <li>Tue</li>
-          <li>Wed</li>
-          <li>Thur</li>
-          <li>Fri</li>
-          <li>Sat</li>
-        </ul>
-      </div>
-
-      <div>
-        <ul class="days">
-        </ul>
-      </div>
-    </div>
-
-
-  </div>
 
 </body>
 <script src="main.js">
