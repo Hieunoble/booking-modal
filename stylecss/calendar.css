@@ -1,0 +1,91 @@
+.calendar {
+  position: absolute;
+  /* display: flex; */
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  height: 600px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: rgb(175, 155, 194);
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 25px 30px 10px;
+}
+
+.header i {
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  background-color: #b9b9b9;
+  opacity: .6;
+  border-radius: 8px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.calendar-detail {
+  padding: 20px;
+}
+
+.calendar-detail ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.calendar-detail .weeks li {
+  font-weight: 700;
+}
+
+.calendar-detail .days {
+  margin-bottom: 20px;
+}
+
+.calendar-detail .days .inactive {
+  opacity: .6;
+}
+
+.calendar-detail .days .active {
+  color: #fff;
+}
+
+.calendar-detail .days li {
+  z-index: 1;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.calendar-detail ul li {
+  position: relative;
+  width: calc(100% / 7);
+}
+
+.calendar-detail .days ul li::before {
+  position: absolute;
+  content: " ";
+  height: 40px;
+  width: 40px;
+  top: -50%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%);
+  border-radius: 50%;
+}
+
+.days li:hover::before {
+  background: #df8ad1;
+
+}
+
+.days li.active::before {
+  background: #8adfab;
+}
