@@ -32,10 +32,11 @@ let date = new Date(),
   currMonth = date.getMonth();
 
 const months = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"]
+  "July", "August", "September", "October", "November", "December"];
+
+let daysTags = document.querySelectorAll('.days li');
 
 const renderCalendar = () => {
-
   let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), //Getting first day of month
     lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), //Getting last date of month
     lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(), //Getting last day of prev month
@@ -58,10 +59,15 @@ const renderCalendar = () => {
 
   currentDate.innerText = `${months[currMonth]} ${currYear}`
   daysTag.innerHTML = liTag
+
+  // TODO
+  // Load lại daysTags với dữ liệu là ngày của tháng mới
+  daysTags = document.querySelectorAll('.days li');
+  daysTags.forEach((li, e) => {
+    li.addEventListener('click', (e, li) => handleSelectDays(e, li))
+  })
 }
 renderCalendar()
-
-let daysTags = document.querySelectorAll('.days li')
 
 prevNextIcon.forEach(icon => {
   icon.addEventListener("click", () => {
@@ -83,18 +89,40 @@ prevNextIcon.forEach(icon => {
 
 const calendarSelector = document.querySelector('input.date')
 
-const handleSelectDays = (e) => {
+const handleSelectDays = (e, li) => {
   const selectedDay = e.target.textContent
   if (selectedDay) {
     calendarSelector.value = `${selectedDay} ${currentDate.innerText}`
+
+    // TODO
+    // Hiện ngày đã chọn trong calendar (tô xanh lá cây) (giờ đang mặc định hiện xanh với ngày hiện tại)
+    daysTags.forEach((li, e) => {
+      const isActive = activeSelectDay(li.textContent);
+      if (isActive === true) {
+        console.log('is active')
+        li.classList.remove('inactive');
+        li.classList.add('active');
+      } else {
+        li.classList.remove('active');
+        li.classList.add('inactive');
+      }
+    })
   }
 }
 
+function activeSelectDay(day) {
+  const selectDateArr = calendarSelector.value.split(' ');
+  const curDate = currentDate.textContent.split(' ');
+  return +selectDateArr[0] === +day && curDate[0] === months[currMonth] && +curDate[1] === +currYear;
+}
 
-daysTags.forEach((li, e) => {
-  // console.log(li.innerHTML);
-  li.addEventListener('click', (e, li) => handleSelectDays(e, li))
-})
+// TODO
+// Nếu chỉ đặt ở đây thì chỉ addEvent với tháng hiện tại, nếu chuyển tháng khác không lấy đc ngày của tháng mới
+// Bê phần này vào trong hàm renderCalendar() để mỗi lần chuyển tháng sẽ cập nhật update ngày trong tháng mới để addEvent được cho ngày của tháng mới
+// daysTags.forEach((li, e) => {
+//   // console.log(li.innerHTML);
+//   li.addEventListener('click', (e, li) => handleSelectDays(e, li))
+// })
 
 
 
