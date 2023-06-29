@@ -42,6 +42,11 @@ const renderCalendar = () => {
     lastDateofPrevMonth = new Date(currYear, currMonth, 0).getDate() //Getting last date of prev month
   liTag = ""
 
+  console.log('1: ', firstDayofMonth);
+  console.log('2: ', lastDateofMonth);
+  console.log('3: ', lastDayofMonth);
+  console.log('4: ', lastDateofPrevMonth);
+
   for (let i = firstDayofMonth; i > 0; i--) { //prev month last days
     liTag += `<li class="inactive">${lastDateofPrevMonth - i + 1}</li>`
   }
