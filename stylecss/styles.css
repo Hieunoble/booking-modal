@@ -30,7 +30,7 @@ body {
 }
 
 .modal {
-  display: none;
+  /* display: none; */
   animation: closeBooking ease-in-out .5s;
   position: fixed;
   top: 0;

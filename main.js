@@ -61,6 +61,8 @@ const renderCalendar = () => {
 }
 renderCalendar()
 
+let daysTags = document.querySelectorAll('.days li')
+
 prevNextIcon.forEach(icon => {
   icon.addEventListener("click", () => {
     icon.id === "prev" ? currMonth -= 1 : currMonth += 1
@@ -80,6 +82,19 @@ prevNextIcon.forEach(icon => {
 // Calendar handler
 
 const calendarSelector = document.querySelector('input.date')
+
+const handleSelectDays = (e) => {
+  const selectedDay = e.target.textContent
+  if (selectedDay) {
+    calendarSelector.value = `${selectedDay} ${currentDate.innerText}`
+  }
+}
+
+
+daysTags.forEach((li, e) => {
+  // console.log(li.innerHTML);
+  li.addEventListener('click', (e, li) => handleSelectDays(e, li))
+})
 
 
 
