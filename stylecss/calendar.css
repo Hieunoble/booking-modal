@@ -88,6 +88,18 @@
   color: #fff;
 }
 
+.days li.selected {
+  color: #fff;
+}
+
+.days li.selected::before {
+  background-color: #e9342a;
+}
+
+.days li.selected.inactive::before {
+  background-color: transparent ;
+}
+
 .calendar-detail ul li {
   position: relative;
   width: calc(100% / 7);

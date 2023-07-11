@@ -44,7 +44,7 @@ const renderCalendar = () => {
   liTag = ""
 
   for (let i = firstDayofMonth; i > 0; i--) { //prev month last days
-    liTag += `<li class="inactive">${lastDateofPrevMonth - i + 1}</li>`
+    liTag += `<li class="inactive" >${lastDateofPrevMonth - i + 1}</li>`
   }
 
   for (let i = 1; i <= lastDateofMonth; i++) { //days of curr month
@@ -88,16 +88,14 @@ prevNextIcon.forEach(icon => {
 // Calendar handler
 const calendarSelector = document.querySelector('input.date')
 const calendar = document.querySelector('.calendar')
-const isOpen = false
 const openCalendar = () => {
-  console.log(!isOpen);
   calendar.classList.toggle('open')
 }
 calendarSelector.addEventListener('click', openCalendar)
 
 const handleSelectDays = (e, li) => {
   const selectedDay = e.target.textContent
-  if (selectedDay) {
+  if (selectedDay && e.target.classList.value !== 'inactive') { //Thêm điều kiện check ngày lặp tháng trước và tháng sau
     calendarSelector.value = `${selectedDay} ${currentDate.innerText}`
 
     // TODO
@@ -105,12 +103,11 @@ const handleSelectDays = (e, li) => {
     daysTags.forEach((li, e) => {
       const isActive = activeSelectDay(li.textContent);
       if (isActive === true) {
-        console.log('is active')
-        li.classList.remove('inactive');
-        li.classList.add('active');
+        li.classList.add('selected');
+
       } else {
-        li.classList.remove('active');
-        li.classList.add('inactive');
+        li.classList.remove('selected');
+        // li.classList.add('inactive');
       }
     })
   }
