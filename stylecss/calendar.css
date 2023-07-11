@@ -1,7 +1,6 @@
 .calendar {
-  /* display: none; */
+  display: none;
   position: absolute;
-  /* display: flex; */
   top: 63px;
   left: 0px;
   height: 220px;
@@ -14,6 +13,11 @@
   background: rgb(255, 255, 255);
   text-align: center;
   font-size: .75rem;
+}
+
+.calendar.open { 
+  display: flex;
+
 }
 
 .header {
