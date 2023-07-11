@@ -88,8 +88,10 @@ prevNextIcon.forEach(icon => {
 // Calendar handler
 const calendarSelector = document.querySelector('input.date')
 const calendar = document.querySelector('.calendar')
+const isOpen = false
 const openCalendar = () => {
-  calendar.classList.add('open')
+  console.log(!isOpen);
+  calendar.classList.toggle('open')
 }
 calendarSelector.addEventListener('click', openCalendar)
 
